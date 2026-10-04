@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Yasi Strawberry Library 🍓</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Tahoma, sans-serif;
+  background: #fff0f3;
+  color: #5a1824;
+  overflow-x: hidden;
+}
+
+/* برگ‌های بالای صفحه */
+.top {
+  position: relative;
+  background: linear-gradient(#e63950, #ff6174);
+  padding: 45px 20px 55px;
+  text-align: center;
+  color: white;
+  border-radius: 0 0 50% 50% / 0 0 18% 18%;
+  box-shadow: 0 8px 20px #c93c50;
+}
+
+.leaves {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 45px;
+  letter-spacing: -15px;
+}
+
+/* عنوان */
+h1 {
+  font-size: 38px;
+  margin: 25px 0 8px;
+  text-shadow: 2px 3px 0 #b91e36;
+}
+
+.subtitle {
+  font-size: 16px;
+}
+
+/* توت فرنگی متحرک */
+.floating-strawberry {
+  position: fixed;
+  top: 170px;
+  left: -80px;
+  font-size: 55px;
+  z-index: 20;
+  animation: strawberryMove 12s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes strawberryMove {
+  0% {
+    left: -80px;
+    transform: rotate(-15deg);
+  }
+  50% {
+    left: calc(100% - 40px);
+    transform: rotate(20deg);
+  }
+  100% {
+    left: -80px;
+    transform: rotate(-15deg);
+  }
+}
+
+/* جستجو */
+.search-box {
+  margin: 25px auto 15px;
+  width: 90%;
+  max-width: 650px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 16px 22px;
+  border: 3px solid #ff7183;
+  border-radius: 35px;
+  font-size: 16px;
+  outline: none;
+  background: white;
+  box-shadow: 0 5px 15px #f3b8c1;
+}
+
+/* دسته‌بندی */
+.categories {
+  text-align: center;
+  padding: 10px;
+}
+
+.categories button {
+  border: none;
+  background: #e63950;
+  color: white;
+  margin: 5px;
+  padding: 10px 17px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.categories button:hover {
+  background: #b91e36;
+  transform: scale(1.05);
+}
+
+/* کتاب‌ها */
+.books {
+  width: 92%;
+  max-width: 1100px;
+  margin: 25px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 25px;
+}
+
+.book {
+  position: relative;
+  background: white;
+  border: 3px solid #ff9baa;
+  border-radius: 30px;
+  padding: 22px;
+  text-align: center;
+  box-shadow: 0 8px 20px #efb4bd;
+  transition: 0.3s;
+}
+
+.book:hover {
+  transform: translateY(-8px) rotate(1deg);
+  box-shadow: 0 14px 25px #df7e8d;
+}
+
+/* قلب */
+.heart {
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  font-size: 25px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.book:hover .heart {
+  opacity: 1;
+  animation: heartPop 0.5s;
+}
+
+@keyframes heartPop {
+  0% { transform: scale(0); }
+  70% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+.cover {
+  font-size: 75px;
+  margin: 5px;
+}
+
+.book h2 {
+  color: #c91f3b;
+  font-size: 20px;
+}
+
+.book p {
+  color: #7c4a52;
+  font-size: 14px;
+}
+
+.read {
+  border: none;
+  background: linear-gradient(135deg, #e63950
